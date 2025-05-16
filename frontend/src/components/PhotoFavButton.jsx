@@ -2,11 +2,12 @@ import { useState } from 'react';
 import '../styles/PhotoFavButton.scss';
 import FavIcon from './FavIcon';
 
-const PhotoFavButton = () => {
+const PhotoFavButton = ({ photoId }) => {
   const [favorite, setFavorite] = useState(false);
 
   const handleClick = () => {
     setFavorite(!favorite);
+    console.log(`CLICK: Photo ID = ${photoId}`);
   };
 
 
