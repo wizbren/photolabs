@@ -21,7 +21,7 @@ const threePhotos = photos.slice(0, 3);
 const App = () => {
   return (
     <div className="App">
-      {photos.slice(0, 3).map((photo) => (
+      {threePhotos.map((photo) => (
         <PhotoListItem key={photo.id} photo={photo} />
       ))}
     </div>
