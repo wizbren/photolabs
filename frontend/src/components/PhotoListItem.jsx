@@ -6,9 +6,9 @@ const PhotoListItem = (props) => {
 
   return (
     <div className="photo-list__item">
-      <img src={props.imageSource} alt="Main" />
-      <div className="photo-list__user">
-        <img src={props.profile} alt="User profile" />
+      <img className="photo-list__image" src={props.imageSource} alt="Main" />
+      <div className="photo-list__user-details">
+        <img className="photo-list__user-profile" src={props.profile} alt="User profile" />
         <div className="photo-list__user-info">
           <p>{props.username}</p>
           <p>
