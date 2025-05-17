@@ -6,12 +6,17 @@ const sampleDataForTopicListItem = {
   label: "Nature",
 };
 
-const TopicListItem = () => {
+const TopicListItem = ({ title }) => {
   return (
     <div className="topic-list__item">
-      {/* Insert React */}
+      <span>{title}</span>
     </div>
   );
+};
+
+{/* Comment out when no longer needed */}
+TopicListItem.defaultProps ={
+  title: "Nature"
 };
 
 export default TopicListItem;
