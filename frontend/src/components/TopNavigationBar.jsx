@@ -1,6 +1,6 @@
 import '../styles/TopNavigationBar.scss'
 
-const TopNavigation = () => {
+const TopNavigationBar = () => {
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
@@ -8,4 +8,4 @@ const TopNavigation = () => {
   )
 };
 
-export default TopNavigation;
+export default TopNavigationBar;
