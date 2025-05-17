@@ -14,9 +14,5 @@ const TopicListItem = ({ title }) => {
   );
 };
 
-{/* Comment out when no longer needed */}
-TopicListItem.defaultProps ={
-  title: "Nature"
-};
 
 export default TopicListItem;
