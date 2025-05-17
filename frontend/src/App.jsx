@@ -4,21 +4,10 @@ import photos from './mocks/photos';
 import './App.scss';
 
 
-const sampleDataForPhotoListItem = {
-  id: "1",
-  location: {
-    city: "Montreal",
-    country: "Canada",
-  },
-  imageSource: "/Image-1-Regular.jpeg",
-  username: "Joe Example",
-  profile: "/profile-1.jpg",
-};
-
-const threePhotos = photos.slice(0, 3);
-
 
 const App = () => {
+  const threePhotos = photos.slice(0, 3);
+
   return (
     <div className="App">
       {threePhotos.map((photo, index) => (
