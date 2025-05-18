@@ -1,7 +1,8 @@
 import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 
-const PhotoDetailsModal = ({ closeModal }) => {
+
+const PhotoDetailsModal = ({ closeModal, photo }) => {
   console.log("Photo opened in modal:", photo);
 
   return (

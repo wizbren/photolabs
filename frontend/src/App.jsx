@@ -35,7 +35,9 @@ const App = () => {
         photos={photos}
         topics={topics}
         favourites={favourites}
-        toggleFavourite={toggleFavourite} />
+        toggleFavourite={toggleFavourite}
+        openModal={openModal}
+      />
       {showModal && <PhotoDetailsModal closeModal={closeModal} photo={selectedPhoto} />}   {/* This might not be right!!! */}
     </div>
   );
