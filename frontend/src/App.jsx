@@ -22,6 +22,10 @@ const App = () => {
     setShowModal(true)
   };
 
+  const closeModal = () => {
+    setShowModal(false)
+  };
+
 
   return (
     <div className="App">
@@ -30,7 +34,7 @@ const App = () => {
         topics={topics}
         favourites={favourites}
         toggleFavourite={toggleFavourite} />
-      {showModal && <PhotoDetailsModal />}   {/* This might not be right!!! */}
+      {showModal && <PhotoDetailsModal closeModal={closeModal} />}   {/* This might not be right!!! */}
     </div>
   );
 };
