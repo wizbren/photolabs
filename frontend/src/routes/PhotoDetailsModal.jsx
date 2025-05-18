@@ -2,6 +2,8 @@ import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 
 const PhotoDetailsModal = ({ closeModal }) => {
+  console.log("Photo opened in modal:", photo);
+
   return (
     <div className="photo-details-modal">
       <button 
