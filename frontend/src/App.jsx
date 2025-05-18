@@ -10,7 +10,7 @@ const App = () => {
 
   const toggleFavourite = (photoId) => {
     setFavourites((previous) => {
-      previous.includes(photoId)
+      return previous.includes(photoId)
         ? previous.filter((id) => id !== photoId)
         : [...previous, photoId]
     });
@@ -18,8 +18,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute 
-        photos={photos} 
+      <HomeRoute
+        photos={photos}
         topics={topics}
         favourites={favourites}
         toggleFavourite={toggleFavourite} />
