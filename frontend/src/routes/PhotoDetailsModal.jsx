@@ -3,7 +3,7 @@ import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from '../components/PhotoList';
 
 
-const PhotoDetailsModal = ({ closeModal, photo }) => {
+const PhotoDetailsModal = ({ closeModal, photo, favourites, toggleFavourite, openModal }) => {
   console.log("Photo opened in modal:", photo);
 
   //* Convert object to array (MIGHT NOT BE RIGHT)
@@ -35,9 +35,9 @@ const PhotoDetailsModal = ({ closeModal, photo }) => {
         <h3>Similar Photos</h3>
         <PhotoList
           photos={similarPhotosArray}
-          favourites={[]}
-          toggleFavourite={() => { }}    // PLACEHOLDER
-          openModal={() => { }}          // PLACEHOLDER
+          favourites={favourites}
+          toggleFavourite={toggleFavourite}
+          openModal={openModal}
         />
 
       </div>
