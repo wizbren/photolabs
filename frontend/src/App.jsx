@@ -38,7 +38,15 @@ const App = () => {
         toggleFavourite={toggleFavourite}
         openModal={openModal}
       />
-      {showModal && <PhotoDetailsModal closeModal={closeModal} photo={selectedPhoto} />}   {/* This might not be right!!! */}
+      {showModal && (
+        <PhotoDetailsModal
+          closeModal={closeModal}
+          photo={selectedPhoto}
+          favourites={favourites}            // passes state
+          toggleFavourite={toggleFavourite}  // updates state
+          openModal={openModal}              //allows reopening modal on sim photo click (test)
+        />
+      )}
     </div>
   );
 };
