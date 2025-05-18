@@ -8,7 +8,8 @@ import './App.scss';
 
 const App = () => {
   const [favourites, setFavourites] = useState([]);
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   const toggleFavourite = (photoId) => {
     setFavourites((previous) => {
@@ -18,7 +19,8 @@ const App = () => {
     });
   };
 
-  const openModal = () => {
+  const openModal = (photo) => {
+    setSelectedPhoto(photo);
     setShowModal(true)
   };
 
@@ -34,7 +36,7 @@ const App = () => {
         topics={topics}
         favourites={favourites}
         toggleFavourite={toggleFavourite} />
-      {showModal && <PhotoDetailsModal closeModal={closeModal} />}   {/* This might not be right!!! */}
+      {showModal && <PhotoDetailsModal closeModal={closeModal} photo={selectedPhoto} />}   {/* This might not be right!!! */}
     </div>
   );
 };
