@@ -39,3 +39,21 @@ div.photo-list__item {
     }
   }
 }
+
+.photo-list__image-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.photo-list__fav-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: white;
+  padding: 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
