@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import photos from "../mocks/photos";
 import topics from "../mocks/topics";
 
@@ -8,42 +8,57 @@ export const ACTIONS = {
   CLOSE_MODAL: "CLOSE_MODAL"
 };
 
+const initialState = {
+  photos,
+  topics,
+  favourites: [],
+  showModal: false,
+  selectedPhoto: null
+};
+
+
+function reducer(state, action) {
+  switch (action.type) {
+    case ACTIONS.TOGGLE_FAV_PHOTO: {
+      const photoId = action.photoId;
+      const favourites = state.favourites.includes(photoId)
+        ? state.favourites.filter(id => id !== photoId)
+        : [...state.favourites, photoId];
+      
+      return {...state, favourites};
+    }
+
+    case ACTIONS.SELECT_PHOTO:
+      return {...state, selectedPhoto: action.photo, showModal: true};
+
+    case ACTIONS.CLOSE_MODAL:
+      return {...state, showModal: false};
+  }
+}
+
 
 const useApplicationData = () => {
-  const [favourites, setFavourites] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const updateFavPhotoIds = (photoId) => {
-    setFavourites((prev) =>
-      prev.includes(photoId)
-        ? prev.filter((id) => id !== photoId)
-        : [...prev, photoId]
-    );
+    dispatch({type: ACTIONS.TOGGLE_FAV_PHOTO, photoId});
   };
 
   const onPhotoSelect = (photo) => {
-    setSelectedPhoto(photo);
-    setShowModal(true);
-  };
+    dispatch({type: ACTIONS.SELECT_PHOTO, photo});
+  }
 
   const closePhotoModal = () => {
-    setShowModal(false);
-  };
+    dispatch({type: ACTIONS.CLOSE_MODAL});
+  }
 
   return {
-    state: {
-      photos,
-      topics,
-      favourites,
-      showModal,
-      selectedPhoto
-    },
+    state,
     updateFavPhotoIds,
     onPhotoSelect,
     closePhotoModal
-  };
-};
+  }
+}
 
 
 export default useApplicationData;
