@@ -2,6 +2,12 @@ import { useState } from "react";
 import photos from "../mocks/photos";
 import topics from "../mocks/topics";
 
+export const ACTIONS = {
+  TOGGLE_FAV_PHOTO: "TOGGLE_FAV_PHOTO",
+  SELECT_PHOTO: "SELECT_PHOTO",
+  CLOSE_MODAL: "CLOSE_MODAL"
+};
+
 
 const useApplicationData = () => {
   const [favourites, setFavourites] = useState([]);
