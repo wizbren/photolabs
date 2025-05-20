@@ -60,8 +60,11 @@ const useApplicationData = () => {
     fetch("/api/photos")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched photos:", data)
-      });
+        dispatch({type: ACTIONS.SET_PHOTO_DATA, photos: data});
+      })
+      .catch((error) => {
+        console.error("Couldn't fetch photos:", error);
+      })
   }, []);
 
   return {
