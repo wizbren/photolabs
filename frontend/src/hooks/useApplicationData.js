@@ -71,6 +71,17 @@ const useApplicationData = () => {
       })
   }, []);
 
+  useEffect(() => {
+    fetch("/api/topics")
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({type: ACTIONS.SET_TOPIC_DATA, topics: data});
+      })
+      .catch((error) => {
+        console.error("Couldn't fetch topics:", error);
+      })      
+  }, []);
+
   return {
     state,
     updateFavPhotoIds,
