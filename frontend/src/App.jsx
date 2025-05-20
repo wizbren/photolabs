@@ -11,7 +11,8 @@ const App = () => {
     state,
     updateFavPhotoIds,
     onPhotoSelect,
-    closePhotoModal
+    closePhotoModal,
+    fetchPhotosByTopic
   } = useApplicationData();
 
   return (
