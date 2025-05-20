@@ -60,6 +60,14 @@ const useApplicationData = () => {
     dispatch({type: ACTIONS.CLOSE_MODAL});
   }
 
+  const fetchPhotosByTopic = (topicId) => {
+    fetch(`/api/topics/${topicId}/photos`)
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({type: ACTIONS.SET_PHOTO_DATA, photos: data});
+      });
+  };
+
   useEffect(() => {
     fetch("/api/photos")
       .then((res) => res.json())
@@ -86,7 +94,8 @@ const useApplicationData = () => {
     state,
     updateFavPhotoIds,
     onPhotoSelect,
-    closePhotoModal
+    closePhotoModal,
+    fetchPhotosByTopic
   }
 }
 
