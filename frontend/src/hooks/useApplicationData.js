@@ -5,8 +5,9 @@ import { useReducer, useEffect } from "react";
 export const ACTIONS = {
   TOGGLE_FAV_PHOTO: "TOGGLE_FAV_PHOTO",
   SELECT_PHOTO: "SELECT_PHOTO",
-  CLOSE_MODAL: "CLOSE_MODAL"
-  SET_PHOTO_DATA: "SET_PHOTO_DATA"
+  CLOSE_MODAL: "CLOSE_MODAL",
+  SET_PHOTO_DATA: "SET_PHOTO_DATA",
+  SET_TOPIC_DATA: "SET_TOPIC_DATA"
 };
 
 const initialState = {
