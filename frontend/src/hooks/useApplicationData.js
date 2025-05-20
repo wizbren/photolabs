@@ -52,6 +52,14 @@ const useApplicationData = () => {
     dispatch({type: ACTIONS.CLOSE_MODAL});
   }
 
+  useEffect(() => {
+    fetch("/api/photos")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Fetched photos:", data)
+      });
+  }, []);
+
   return {
     state,
     updateFavPhotoIds,
