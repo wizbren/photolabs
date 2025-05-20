@@ -7,7 +7,7 @@ const PhotoDetailsModal = ({ closeModal, photo, favourites, toggleFavourite, ope
   console.log("Photo opened in modal:", photo);
 
   //* Convert object to array (MIGHT NOT BE RIGHT)
-  const similarPhotosArray = Object.values(photo.similar_photos);
+  const similarPhotosArray = Object.values(photo.similar_photos || {});
 
   return (
     <div className="photo-details-modal">
