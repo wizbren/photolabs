@@ -22,6 +22,7 @@ const App = () => {
         favourites={state.favourites}
         toggleFavourite={updateFavPhotoIds}
         openModal={onPhotoSelect}
+        fetchPhotosByTopic={fetchPhotosByTopic}
       />
       {state.showModal && (
         <PhotoDetailsModal

@@ -6,9 +6,9 @@ const sampleDataForTopicListItem = {
   label: "Nature",
 };
 
-const TopicListItem = ({ title }) => {
+const TopicListItem = ({ title, onClick }) => {
   return (
-    <div className="topic-list__item">
+    <div className="topic-list__item" onClick={onClick}>
       <span>{title}</span>
     </div>
   );

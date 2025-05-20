@@ -3,11 +3,15 @@ import "../styles/TopicList.scss";
 
 
 
-const TopicList = ({ topics }) => {
+const TopicList = ({ topics, onTopicClick }) => {
   return (
     <div className="top-nav-bar__topic-list">
       {topics.map((topic) => (
-        <TopicListItem key={topic.id} title={topic.title} />
+        <TopicListItem 
+          key={topic.id} 
+          title={topic.title}
+          onClick={() => onTopicClick(topic.id)}
+          />
       ))}
     </div>
   );

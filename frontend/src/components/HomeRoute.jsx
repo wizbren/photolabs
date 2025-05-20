@@ -4,11 +4,15 @@ import PhotoList from "./PhotoList";
 import '../styles/HomeRoute.scss'
 
 
-const HomeRoute = ({ photos, topics, favourites, toggleFavourite, openModal }) => {
+const HomeRoute = ({ photos, topics, favourites, toggleFavourite, openModal, fetchPhotosByTopic }) => {
 
   return (
     <div className="home-route">
-      <TopNavigationBar topics={topics} favourites={favourites} />
+      <TopNavigationBar
+        topics={topics}
+        favourites={favourites}
+        onTopicClick={fetchPhotosByTopic}
+      />
       <PhotoList
         photos={photos}
         favourites={favourites}
