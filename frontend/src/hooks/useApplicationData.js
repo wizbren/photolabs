@@ -1,6 +1,6 @@
-import { useReducer } from "react";
-import photos from "../mocks/photos";
-import topics from "../mocks/topics";
+import { useReducer, useEffect } from "react";
+
+
 
 export const ACTIONS = {
   TOGGLE_FAV_PHOTO: "TOGGLE_FAV_PHOTO",
@@ -9,8 +9,8 @@ export const ACTIONS = {
 };
 
 const initialState = {
-  photos,
-  topics,
+  photos: [],
+  topics: [],
   favourites: [],
   showModal: false,
   selectedPhoto: null
