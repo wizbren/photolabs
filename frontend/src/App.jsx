@@ -8,12 +8,12 @@ import './App.scss';
 
 const App = () => {
   const {
-    state,
-    updateFavPhotoIds,
-    onPhotoSelect,
-    closePhotoModal,
-    fetchPhotosByTopic
-  } = useApplicationData();
+    state,                  //contains all app state
+    updateFavPhotoIds,      //function for toggling favourites on photo
+    onPhotoSelect,          //function to open selected photo in modal
+    closePhotoModal,        //function to close the modal
+    fetchPhotosByTopic      //function to get photos of specific topic
+  } = useApplicationData(); 
 
   return (
     <div className="App">
@@ -37,5 +37,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
