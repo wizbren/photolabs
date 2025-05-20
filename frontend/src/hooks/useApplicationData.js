@@ -6,6 +6,7 @@ export const ACTIONS = {
   TOGGLE_FAV_PHOTO: "TOGGLE_FAV_PHOTO",
   SELECT_PHOTO: "SELECT_PHOTO",
   CLOSE_MODAL: "CLOSE_MODAL"
+  SET_PHOTO_DATA: "SET_PHOTO_DATA"
 };
 
 const initialState = {
@@ -33,6 +34,9 @@ function reducer(state, action) {
 
     case ACTIONS.CLOSE_MODAL:
       return {...state, showModal: false};
+
+    case ACTIONS.SET_PHOTO_DATA:
+      return {...state, photos: action.photos};
   }
 }
 
