@@ -38,6 +38,9 @@ function reducer(state, action) {
 
     case ACTIONS.SET_PHOTO_DATA:
       return {...state, photos: action.photos};
+
+    case ACTIONS.SET_TOPIC_DATA:
+      return {...state, topics: action.topics};
   }
 }
 
