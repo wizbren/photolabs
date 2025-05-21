@@ -66,6 +66,10 @@ const useApplicationData = () => {            // custom hook for managing state 
     dispatch({type: ACTIONS.CLOSE_MODAL});
   }
 
+  const toggleFavList = () => {
+    dispatch({type: ACTIONS.TOGGLE_FAV_LIST});
+  }
+
   const fetchPhotosByTopic = (topicId) => {   // fetch photos related to specific topic
     fetch(`/api/topics/${topicId}/photos`)
       .then((res) => res.json())
@@ -101,8 +105,9 @@ const useApplicationData = () => {            // custom hook for managing state 
     updateFavPhotoIds,
     onPhotoSelect,
     closePhotoModal,
-    fetchPhotosByTopic
-  }
+    fetchPhotosByTopic,
+    toggleFavList
+  };
 }
 
 
