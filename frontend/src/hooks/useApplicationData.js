@@ -8,6 +8,7 @@ export const ACTIONS = {
   CLOSE_MODAL: "CLOSE_MODAL",            // close photo modal
   SET_PHOTO_DATA: "SET_PHOTO_DATA",      // load the photo data into state
   SET_TOPIC_DATA: "SET_TOPIC_DATA"       // load the topic data into state
+  TOGGLE_FAV_LIST: "TOGGLE_FAV_LIST"     // toggles favourites view
 };
 
 // initial state of reducer
@@ -16,7 +17,8 @@ const initialState = {
   topics: [],                            // list of all topics
   favourites: [],                        // array of favourite photos 
   showModal: false,                      // boolean for showing/hiding modal
-  selectedPhoto: null                    // current photo selected in modal
+  selectedPhoto: null,                   // current photo selected in modal
+  viewFavourites: false                  // boolean for favourites list view
 };
 
 
@@ -42,6 +44,9 @@ function reducer(state, action) {            // reducer function to decide how s
 
     case ACTIONS.SET_TOPIC_DATA:             // store loaded topic data in state
       return {...state, topics: action.topics};
+
+    case ACTIONS.TOGGLE_FAV_LIST:            // toggles viewFavourites to true/false
+      return {...state, viewFavourites: !state.viewFavourites};
   }
 }
 
