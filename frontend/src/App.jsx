@@ -8,11 +8,12 @@ import './App.scss';
 
 const App = () => {
   const {
-    state,                  //contains all app state
+    state,                  
     updateFavPhotoIds,      //function for toggling favourites on photo
     onPhotoSelect,          //function to open selected photo in modal
-    closePhotoModal,        //function to close the modal
-    fetchPhotosByTopic      //function to get photos of specific topic
+    closePhotoModal,        
+    fetchPhotosByTopic,
+    toggleFavList
   } = useApplicationData(); 
 
   return (
@@ -24,6 +25,8 @@ const App = () => {
         toggleFavourite={updateFavPhotoIds}
         openModal={onPhotoSelect}
         fetchPhotosByTopic={fetchPhotosByTopic}
+        viewFavourites={state.viewFavourites}
+        toggleFavList={toggleFavList}
       />
       {state.showModal && (
         <PhotoDetailsModal
