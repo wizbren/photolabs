@@ -4,7 +4,16 @@ import PhotoList from "./PhotoList";
 import '../styles/HomeRoute.scss'
 
 
-const HomeRoute = ({ photos, topics, favourites, toggleFavourite, openModal, fetchPhotosByTopic }) => {
+const HomeRoute = ({
+  photos,
+  topics,
+  favourites,
+  toggleFavourite,
+  openModal,
+  fetchPhotosByTopic,
+  viewFavourites,
+  toggleFavList
+}) => {
 
   return (
     <div className="home-route">
