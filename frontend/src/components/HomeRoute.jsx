@@ -27,7 +27,7 @@ const HomeRoute = ({
         onTopicClick={fetchPhotosByTopic}
       />
       <PhotoList
-        photos={photos}
+        photos={filteredPhotos}
         favourites={favourites}
         toggleFavourite={toggleFavourite}
         openModal={openModal}
