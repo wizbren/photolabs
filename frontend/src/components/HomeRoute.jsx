@@ -25,6 +25,7 @@ const HomeRoute = ({
         topics={topics}
         favourites={favourites}
         onTopicClick={fetchPhotosByTopic}
+        onViewFavourites={toggleFavList}
       />
       <PhotoList
         photos={filteredPhotos}
