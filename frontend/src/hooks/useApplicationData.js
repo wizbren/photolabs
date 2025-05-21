@@ -7,7 +7,7 @@ export const ACTIONS = {
   SELECT_PHOTO: "SELECT_PHOTO",          // open selected photo in modal
   CLOSE_MODAL: "CLOSE_MODAL",            // close photo modal
   SET_PHOTO_DATA: "SET_PHOTO_DATA",      // load the photo data into state
-  SET_TOPIC_DATA: "SET_TOPIC_DATA"       // load the topic data into state
+  SET_TOPIC_DATA: "SET_TOPIC_DATA",      // load the topic data into state
   TOGGLE_FAV_LIST: "TOGGLE_FAV_LIST"     // toggles favourites view
 };
 
