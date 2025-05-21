@@ -15,6 +15,10 @@ const HomeRoute = ({
   toggleFavList
 }) => {
 
+  const filteredPhotos = viewFavourites
+    ? photos.filter(photo => favourites.includes(photo.id))
+    : photos;
+
   return (
     <div className="home-route">
       <TopNavigationBar
